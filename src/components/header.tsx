@@ -6,7 +6,6 @@ const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const location = useLocation();
   const navigate = useNavigate();
-  const baseUrl = import.meta.env.BASE_URL;
 
   const handleNavigation = (section: string) => {
     if (["Review", "Gallery", "Services"].includes(section)) {
@@ -56,7 +55,7 @@ const Header = () => {
                 className="hover:scale-110 transform transition-transform duration-300 inline-block"
               >
                 <img
-                  src={`${baseUrl}/logo.png`}
+                  src={`/logo.png`}
                   alt="BeachClean Logo"
                   className="h-10 w-auto"
                   draggable="false"
