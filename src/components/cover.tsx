@@ -2,14 +2,16 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 const HeroSection: React.FC = () => {
+  const baseUrl = import.meta.env.BASE_URL;
+
   return (
     <div className="relative">
       {/* Background Image */}
       <img
-        src="/cover.jpeg"
+        src={`${baseUrl}/cover.jpeg`}
         draggable="false"
         alt="Cover"
-        className="w-full h-auto"
+        className="w-full h-screen object-cover"
       />
 
       {/* Overlay Section */}
@@ -23,7 +25,7 @@ const HeroSection: React.FC = () => {
           </p>
           <Link
             to="/contact"
-            className="bg-[#ff8c28] quote-button hover:bg-[#ff9d4d] text-white px-6 sm:px-8 py-3 rounded text-base sm:text-lg font-medium inline-block"
+            className="bg-orange-500 hover:bg-orange-600 text-white px-6 sm:px-8 py-3 rounded text-base sm:text-lg font-medium inline-block transition-colors duration-200"
           >
             Get Your Free Quote Today
           </Link>

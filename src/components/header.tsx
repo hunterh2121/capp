@@ -6,11 +6,12 @@ const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const location = useLocation();
   const navigate = useNavigate();
+  const baseUrl = import.meta.env.BASE_URL;
 
   const handleNavigation = (section: string) => {
     if (["Review", "Gallery", "Services"].includes(section)) {
       if (location.pathname !== "/") {
-        // If we're not on the home page, navigate there firstaa
+        // If we're not on the home page, navigate there first
         navigate("/", { state: { scrollTo: section.toLowerCase() } });
       } else {
         // If we're already on the home page, just scroll
@@ -55,7 +56,7 @@ const Header = () => {
                 className="hover:scale-110 transform transition-transform duration-300 inline-block"
               >
                 <img
-                  src="/window-cleaning/logo.png"
+                  src={`${baseUrl}/logo.png`}
                   alt="BeachClean Logo"
                   className="h-10 w-auto"
                   draggable="false"
@@ -78,7 +79,7 @@ const Header = () => {
                           {item}
                         </span>
                         <span
-                          className="absolute bottom-0 left-0 w-full h-0.5 bg-[#ff8c28] transform scale-x-0 
+                          className="absolute bottom-0 left-0 w-full h-0.5 bg-orange-500 transform scale-x-0 
                                      group-hover:scale-x-100 transition-transform duration-300 origin-center"
                         />
                       </button>
@@ -92,7 +93,7 @@ const Header = () => {
                           {item}
                         </span>
                         <span
-                          className="absolute bottom-0 left-0 w-full h-0.5 bg-[#ff8c28] transform scale-x-0 
+                          className="absolute bottom-0 left-0 w-full h-0.5 bg-orange-500 transform scale-x-0 
                                      group-hover:scale-x-100 transition-transform duration-300 origin-center"
                         />
                       </Link>
@@ -105,7 +106,7 @@ const Header = () => {
             <div className="hidden md:block flex-shrink-0 mr-4">
               <Link
                 to="/contact"
-                className="bg-[#ff8c28] text-white px-6 py-2 rounded quote-button inline-block"
+                className="bg-orange-500 text-white px-6 py-2 rounded quote-button inline-block hover:bg-orange-600 transition-colors duration-200"
               >
                 Get a Quote
               </Link>
@@ -115,7 +116,7 @@ const Header = () => {
             <button
               onClick={() => setIsMenuOpen(!isMenuOpen)}
               className={`md:hidden text-white p-2 relative z-50 ${
-                isMenuOpen ? "bg-[#0095cc]" : ""
+                isMenuOpen ? "bg-sky-500" : ""
               }`}
             >
               <Menu size={24} />
@@ -150,7 +151,7 @@ const Header = () => {
                       handleNavigation(item);
                       setIsMenuOpen(false);
                     }}
-                    className="text-gray-700 py-4 text-lg hover:text-[#00b0f0] transition-colors duration-200 text-left"
+                    className="text-gray-700 py-4 text-lg hover:text-sky-500 transition-colors duration-200 text-left"
                   >
                     {item}
                   </button>
@@ -158,7 +159,7 @@ const Header = () => {
                   <Link
                     key={item}
                     to={`/${item.toLowerCase()}`}
-                    className="text-gray-700 py-4 text-lg hover:text-[#00b0f0] transition-colors duration-200"
+                    className="text-gray-700 py-4 text-lg hover:text-sky-500 transition-colors duration-200"
                     onClick={() => setIsMenuOpen(false)}
                   >
                     {item}
@@ -168,7 +169,7 @@ const Header = () => {
               <div className="h-px bg-gray-200 my-4" />
               <Link
                 to="/contact"
-                className="bg-[#ff8c28] text-white py-3 px-6 rounded text-center quote-button inline-block"
+                className="bg-orange-500 text-white py-3 px-6 rounded text-center quote-button inline-block hover:bg-orange-600 transition-colors duration-200"
                 onClick={() => setIsMenuOpen(false)}
               >
                 Get a Quote
