@@ -101,20 +101,18 @@ const BeforeAfterSlider = ({ beforeImage, afterImage }: SliderProps) => {
 };
 
 const BeforeAfterComparison = () => {
-  const baseUrl = import.meta.env.BASE_URL;
-
   return (
     <div className="w-full max-w-6xl mx-auto p-8">
       <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
         <BeforeAfterSlider
           id="1"
-          beforeImage={`${baseUrl}/before.jpg`}
-          afterImage={`${baseUrl}/after.jpg`}
+          beforeImage="/before.jpg"
+          afterImage="/after.jpg"
         />
         <BeforeAfterSlider
           id="2"
-          beforeImage={`${baseUrl}/before1.jpg`}
-          afterImage={`${baseUrl}/after1.jpg`}
+          beforeImage="/before1.jpg"
+          afterImage="/after1.jpg"
         />
       </div>
     </div>

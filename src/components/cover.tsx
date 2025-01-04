@@ -2,13 +2,11 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 const HeroSection: React.FC = () => {
-  const baseUrl = import.meta.env.BASE_URL;
-
   return (
     <div className="relative">
       {/* Background Image */}
       <img
-        src={`${baseUrl}/cover.jpeg`}
+        src={`/cover.jpeg`}
         draggable="false"
         alt="Cover"
         className="w-full h-screen object-cover"
